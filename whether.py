@@ -5,6 +5,7 @@ import random
 import datetime
 import json
 import re
+import os 
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -231,5 +232,6 @@ def generate_travel_summary(from_city, to_city):
     return jsonify({"summary": summary_text})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Get port from environment, default to 5000
-    app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=5001)
+
