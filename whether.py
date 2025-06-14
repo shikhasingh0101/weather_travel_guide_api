@@ -230,5 +230,6 @@ def generate_travel_summary(from_city, to_city):
     summary_text = response.json().get('message', {}).get('content', '').strip()
     return jsonify({"summary": summary_text})
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Get port from environment, default to 5000
+    app.run(host="0.0.0.0", port=port)
