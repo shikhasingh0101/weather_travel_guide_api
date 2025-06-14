@@ -29,6 +29,10 @@ def extract_date(message):
     match = re.search(r'(next week|tomorrow|today|\d{1,2} \w+)', message, re.IGNORECASE)
     return match.group(1).lower() if match else "next week"
 
+@app.route("/")
+def home():
+    return "✅ Weather & Travel API is running on Render!"
+
 @app.route('/extract_location_date', methods=['POST'])
 def extract_location_date():
     data = request.get_json()
