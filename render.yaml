@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: weather-travel-guide-api
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn whether:app
+    region: oregon
+    plan: free
+    runtime: python
+    branch: main
+    repo: https://github.com/shikhasingh0101/weather_travel_guide_api
